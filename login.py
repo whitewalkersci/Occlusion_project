@@ -6,8 +6,25 @@ import threading
 app = Flask(__name__)
 api = Api(app)
 
+import os
+
 # Function to create a new database connection
 def get_db():
+    # Check if the database file exists
+    if not os.path.exists('database.db'):
+        # If the database file doesn't exist, create it
+        conn = sqlite3.connect('database.db')
+        # Create the users table
+        conn.execute('''
+            CREATE TABLE users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT UNIQUE NOT NULL,
+                password TEXT NOT NULL
+            )
+        ''')
+        conn.commit()
+        conn.close()
+
     return sqlite3.connect('database.db')
 
 class Login(Resource):
@@ -68,4 +85,4 @@ api.add_resource(Login, '/login')
 api.add_resource(CreateUser, '/create_user')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5002)

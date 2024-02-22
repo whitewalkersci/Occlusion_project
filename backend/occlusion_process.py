@@ -53,19 +53,17 @@ class OcclusionModel:
 
             input_crop = self.check_and_convert_to_bgr(input_crop)
 
-
-            # input_crop = cv2.cvtColor(input_crop, cv2.COLOR_GRAY2RGB)
             classification_class = self.model.classify_roi(input_crop)
             # progress_bar.update(1)
             if classification_class == 'cell':
                 positive += 1
-                os.makedirs(f'crop/{sp_name}/{section_name}/cell',exist_ok=True)
-                cv2.imwrite(f'crop/{sp_name}/{section_name}/cell/{id}.jpg',input_crop)
+                # os.makedirs(f'crop/{sp_name}/{section_name}/cell',exist_ok=True)
+                # cv2.imwrite(f'crop/{sp_name}/{section_name}/cell/{id}.jpg',input_crop)
             
                 
             else:
                 negative += 1
-                os.makedirs(f'crop/{sp_name}/{section_name}/no_cell',exist_ok=True)
-                cv2.imwrite(f'crop/{sp_name}/{section_name}/no_cell/{id}.jpg',input_crop)
+                # os.makedirs(f'crop/{sp_name}/{section_name}/no_cell',exist_ok=True)
+                # cv2.imwrite(f'crop/{sp_name}/{section_name}/no_cell/{id}.jpg',input_crop)
 
         return negative, positive

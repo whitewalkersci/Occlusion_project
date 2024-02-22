@@ -1,6 +1,7 @@
 
 import cv2
 import os
+import glob 
 import numpy as np 
 from skimage.feature import match_template
 from skimage.feature import peak_local_max
@@ -45,7 +46,16 @@ class PillarDetector:
 
     def process_cont(self, image_section, sec_id, sp_name):
         file_name = os.path.join('patches_database', f'section_{sec_id+1}_{sp_name}.png')
-        return cv2.imread(file_name, cv2.IMREAD_GRAYSCALE)
+        print(file_name)
+        
+        # Check if the file exists
+        if os.path.exists(file_name):
+            # Read the image if the file exists
+            return cv2.imread(file_name, cv2.IMREAD_GRAYSCALE)
+        else:
+            print('Handle the case where the file doesnt exist')
+            file_name = glob.glob('patches_database/*')
+            return cv2.imread(file_name[0], cv2.IMREAD_GRAYSCALE)
 
     def recursive_process(self, npimg, npimg_plot, patch, all_points, thresh, sp_name, sec_id, model_activation=False):
         # Your recursive_process function code here
