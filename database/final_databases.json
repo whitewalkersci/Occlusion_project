@@ -1,0 +1,41 @@
+{
+    "1": {
+        "1": "Na",
+        "2": "Na",
+        "3": "Na",
+        "4": "Na",
+        "5": "Na",
+        "Specimen_001": {
+            "Section4": {
+                "Number_of_pillars": 9801,
+                "Occlusion_count": 2625,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "database/Specimen_001/section_plotted_images/0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10575,
+                "Occlusion_count": 6200,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "database/Specimen_001/section_plotted_images/1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 9372,
+                "Occlusion_count": 8581,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "database/Specimen_001/section_plotted_images/2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 13860,
+                "Occlusion_count": 12797,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "database/Specimen_001/section_plotted_images/3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0
+        }
+    }
+}

@@ -1,11 +1,11 @@
 import requests
 
-# url = 'http://127.0.0.1:5001/process_image'
-# image_path = '/home/whitewalker/Desktop/Sciverse_2/Specimen_001.tif'
-# payload = {'image_path': image_path}
-# response = requests.post(url, json=payload)
+url = 'http://127.0.0.1:5001/process_image'
+image_path = '/home/whitewalker/Desktop/Sciverse_2/Specimen_001.tif'
+payload = {'image_path': image_path}
+response = requests.post(url, json=payload)
 
-# print(response.json())
+print(response.json())
 
 
 # Define the input JSON

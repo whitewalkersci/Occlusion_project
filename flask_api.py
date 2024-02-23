@@ -7,10 +7,31 @@ from backend.occlusion_process import OcclusionModel
 import os 
 from pathlib import Path
 import sqlite3
+import json 
 
 
 app = Flask(__name__)
 api = Api(app)
+
+
+
+def update_json_file(filename, key, new_dict):
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        data = {}
+        
+    if key in data:
+        if isinstance(data[key], list):
+            data[key].append(new_dict)
+        else:
+            data[key] = [data[key], new_dict]
+    else:
+        data[key] = new_dict
+
+    with open(filename, 'w') as file:
+        json.dump(data, file, indent=4)
 
 
 class SectionProcessing(Resource):
@@ -48,12 +69,19 @@ class CountProcessing(Resource):
             data = request.get_json()
             occlusion_model_path = os.path.join('models', 'occlusion.onnx')
             pillar_filter_path = os.path.join('models', 'pillar_filter.onnx')
-            result = {}
+            result = {1:"Na",2:"Na",3:"Na",4:"Na",5:"Na"}
+
+            database_filename = os.path.join('database', 'final_databases.json')
+
+            if not os.path.exists(database_filename):
+                with open(database_filename, 'w') as file:
+                    json.dump({}, file)
     
             specimen_name = data['specimen_name']
         
 
             sections_image_path = data['sections_image_path']  
+            result[specimen_name]= {}
 
             occlusion_model = OcclusionModel(occlusion_model_path)
             process_pillar = PillarDetector(pillar_filter_path)
@@ -73,14 +101,25 @@ class CountProcessing(Resource):
 
                 print(f'Section{4 - sec_id}: Number_of_pillars: {pillar_count}, Occlusion_count: {num_positive}')
 
-                result[f'Section{4 - sec_id}'] = {'Number_of_pillars': pillar_count, 
+                result[specimen_name][f'Section{4 - sec_id}'] = {'Number_of_pillars': pillar_count, 
                                                   'Occlusion_count': num_positive,
                                                   'Unindentified': 0,
                                                   'Non_occlusion':0 ,
                                                   'Plotted_path':plotted_image_path}
                 
-            result['Total_occlusion_count'] = 0
-            result['Occlusion_index'] = 0
+            result[specimen_name]['Total_occlusion_count'] = 0
+            result[specimen_name]['Occlusion_index'] = 0
+
+
+            with open(database_filename, 'r') as file:
+                data = json.load(file)
+                total_elements = sum(len(value) if isinstance(value, list) else 1 for value in data.values())
+
+            data[total_elements+1] = result
+    
+            with open(database_filename, 'w') as file:
+                json.dump(data, file, indent=4)
+
 
             return result , 200
 
@@ -163,6 +202,17 @@ class CreateUser(Resource):
                     return {'message': 'User created successfully'}, 201
         except Exception as e:
             return {'message': f'Error creating user: {str(e)}'}, 500
+        
+class HistoryPage(Resource):
+    def get(self):
+        try:
+            database_json_path = os.path.join('database', 'final_database.json')
+            with open(database_json_path, 'r') as file:
+                data_from_file = json.load(file)
+
+                return data_from_file , 200
+        except Exception as e:
+            return {'message': f'Error reading {str(e)}'}, 500
 
 # Add the Login and CreateUser resources to the API
 api.add_resource(Login, '/login')
