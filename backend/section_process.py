@@ -139,6 +139,9 @@ class ImageProcessor:
 
                 ### triming section 
                 crop = crop[400:-400,90:crop.shape[1]-90]
+
+                if crop.shape[1] > 5000:
+                    crop = crop[:,:4800]
                 
 
                 curr_dir = os.getcwd()

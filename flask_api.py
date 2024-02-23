@@ -128,6 +128,23 @@ class CountProcessing(Resource):
             traceback.print_exc()
             return {'message': f'Error processing image: {str(e)}'}, 500
         
+class HistoryPage(Resource):
+    def get(self):
+        try:
+            database_json_path = os.path.join('database', 'final_database.json')
+            with open(database_json_path, 'r') as file:
+                data_from_file = json.load(file)
+
+                return data_from_file , 200
+        except Exception as e:
+            return {'message': f'Error reading {str(e)}'}, 500
+        
+# class Result(Resource):
+#     def post(self):
+#         try:
+#             project = request.get_json()
+
+#             project_name = 
 
 
 
@@ -203,16 +220,7 @@ class CreateUser(Resource):
         except Exception as e:
             return {'message': f'Error creating user: {str(e)}'}, 500
         
-class HistoryPage(Resource):
-    def get(self):
-        try:
-            database_json_path = os.path.join('database', 'final_database.json')
-            with open(database_json_path, 'r') as file:
-                data_from_file = json.load(file)
 
-                return data_from_file , 200
-        except Exception as e:
-            return {'message': f'Error reading {str(e)}'}, 500
 
 # Add the Login and CreateUser resources to the API
 api.add_resource(Login, '/login')
@@ -221,6 +229,7 @@ api.add_resource(CreateUser, '/create_user')
 # Define the API endpoint
 api.add_resource(SectionProcessing, '/process_image')
 api.add_resource(CountProcessing,'/process_analysis')
+api.add_resource(HistoryPage, '/history')
 
 if __name__ == '__main__':
     app.run(debug=True,port=5001)  # Set debug to False in production
