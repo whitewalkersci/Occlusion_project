@@ -69,8 +69,9 @@ class CountProcessing(Resource):
             data = request.get_json()
             occlusion_model_path = os.path.join('models', 'occlusion.onnx')
             pillar_filter_path = os.path.join('models', 'pillar_filter.onnx')
-
             database_filename = os.path.join('database', 'final_databases.json')
+            
+            result = {}
 
             if not os.path.exists(database_filename):
                 with open(database_filename, 'w') as file:
@@ -232,3 +233,4 @@ api.add_resource(HistoryPage, '/history')
 
 if __name__ == '__main__':
     app.run(debug=True,port=5001)  # Set debug to False in production
+
