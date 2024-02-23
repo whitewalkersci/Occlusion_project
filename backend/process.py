@@ -9,7 +9,7 @@ from backend.model_inference import ClassificationModel
 
 
 class PillarDetector:
-    def __init__(self, model_path='models/pillar_filter.onnx', pillar_class=['positive_pillar','negative_pillar']):
+    def __init__(self, model_path, pillar_class=['positive_pillar','negative_pillar']):
         self.model_pillar_filter = ClassificationModel(model_path, pillar_class)
 
     @staticmethod
@@ -46,7 +46,6 @@ class PillarDetector:
 
     def process_cont(self, image_section, sec_id, sp_name):
         file_name = os.path.join('patches_database', f'section_{sec_id+1}_{sp_name}.png')
-        print(file_name)
         
         # Check if the file exists
         if os.path.exists(file_name):
@@ -124,6 +123,9 @@ class PillarDetector:
         npimg_plot = npimg.copy()
         all_points = []
 
+        database_section_plotted_path = os.path.join('database', f'{specimen_name}','section_plotted_images')
+        os.makedirs(database_section_plotted_path,exist_ok=True)
+
         for st, thresh in enumerate([0.75, 0.78, 0.75, 0.75, 0.73, 0.70, 0.65, 0.68, 0.65, 0.63, 0.60, 50, 0.50, 0.48]):
             if st > 0:
                 model_activation = True
@@ -141,20 +143,28 @@ class PillarDetector:
 
             if sec_id == 0 and len(all_points) > 9850:
                 all_points = all_points[:9850]
-                return npimg, len(all_points), all_points
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                cv2.imwrite(plotted_image_path, npimg_plot)
+                return npimg, len(all_points), all_points,plotted_image_path
+            
             elif sec_id == 1 and len(all_points) > 10900:
                 all_points = all_points[:10900]
-                return npimg, len(all_points), all_points
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                cv2.imwrite(plotted_image_path, npimg_plot)
+                return npimg, len(all_points), all_points,plotted_image_path
+            
             elif sec_id == 2 and len(all_points) > 12300:
                 all_points = all_points[:12300]
-                return npimg, len(all_points), all_points
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                cv2.imwrite(plotted_image_path, npimg_plot)
+                return npimg, len(all_points), all_points ,plotted_image_path
+            
             elif sec_id == 3 and len(all_points) > 14020:
                 all_points = all_points[:14020]
-                return npimg, len(all_points), all_points
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                cv2.imwrite(plotted_image_path, npimg_plot)
+                return npimg, len(all_points), all_points ,plotted_image_path
             
-        database_section_plotted_path = os.path.join('database', f'{specimen_name}','section_plotted_images')
-        os.makedirs(database_section_plotted_path,exist_ok=True)
-
         plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
         cv2.imwrite(plotted_image_path, npimg_plot)
-        return npimg, len(all_points), all_points
+        return npimg, len(all_points), all_points,plotted_image_path

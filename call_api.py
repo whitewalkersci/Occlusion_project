@@ -1,7 +1,7 @@
 import requests
 
 # url = 'http://127.0.0.1:5001/process_image'
-# image_path = 'Specimen_001.tif'
+# image_path = '/home/whitewalker/Desktop/Sciverse_2/Specimen_001.tif'
 # payload = {'image_path': image_path}
 # response = requests.post(url, json=payload)
 
@@ -22,4 +22,4 @@ url_2 = 'http://127.0.0.1:5001/process_analysis'
 payload_2 = input_data
 response_2 = requests.post(url_2, json=payload_2)
 
-print(response_2.json())
+print(response_2)

@@ -1,7 +1,7 @@
 import requests
 
 # Define the API URL
-url = 'http://localhost:5002/login'
+url = 'http://localhost:5001/login'
 
 # JSON payload with username and password
 payload = {'username': 'Dhruv', 'password': '123'}
@@ -16,7 +16,7 @@ print(response.json())
 import requests
 
 # Define the API URL for creating a user
-create_user_url = 'http://localhost:5002/create_user'
+create_user_url = 'http://localhost:5001/create_user'
 
 # JSON payload with username and password for the new user
 new_user_payload = {'username': 'Sham', 'password': '123'}
