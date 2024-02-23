@@ -69,7 +69,6 @@ class CountProcessing(Resource):
             data = request.get_json()
             occlusion_model_path = os.path.join('models', 'occlusion.onnx')
             pillar_filter_path = os.path.join('models', 'pillar_filter.onnx')
-            result = {1:"Na",2:"Na",3:"Na",4:"Na",5:"Na"}
 
             database_filename = os.path.join('database', 'final_databases.json')
 
