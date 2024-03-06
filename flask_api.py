@@ -62,8 +62,9 @@ class CountProcessing(Resource):
     def post(self):
         try:        
             data = request.get_json()
-            occlusion_model_path = os.path.join(os.getcwd(),'models', 'occlusion.onnx')
+            occlusion_model_path = os.path.join(os.getcwd(),'models', 'occlusion3.onnx')
             pillar_filter_path = os.path.join(os.getcwd(),'models', 'pillar_filter.onnx')
+            filter_model_path = os.path.join(os.getcwd(),'models', 'filter_model.pth')
             database_filename = os.path.join(os.getcwd(),'database', 'final_databases.json')
 
             result = {}
@@ -77,31 +78,45 @@ class CountProcessing(Resource):
             sections_image_path = data['sections_image_path']  
             result[specimen_name]= {}
 
-            occlusion_model = OcclusionModel(occlusion_model_path)
+            occlusion_model = OcclusionModel(occlusion_model_path,filter_model_path)
             process_pillar = PillarDetector(pillar_filter_path)
+            
+            total_pillars_found = 0
 
             for sec_id, section_path in enumerate(sections_image_path):
+                print(f'Section{4 - sec_id}-----{section_path}')
                 section_image = cv2.imread(section_path, cv2.IMREAD_GRAYSCALE)
                 section_image_copy = sections_image_path.copy()
                 patch = process_pillar.process_cont(section_image, sec_id, specimen_name)
 
                 image, pillar_count, all_points, plotted_image_path = process_pillar.detect_pillars(section_image, patch, sec_id,
                                                                                 specimen_name)
+                status = False
+                if (4-sec_id) == 1 and pillar_count>9300:
+                    status = True
+                elif (4-sec_id) == 2 and pillar_count>10000:
+                    status = True
+                elif (4-sec_id) == 3 and pillar_count>11500:
+                    status = True
+                elif (4-sec_id) == 4 and pillar_count>13000:
+                    status = True
 
                 num_negative, num_positive = occlusion_model.occlusion_finder(all_points, 
                                                                                 section_image, 
                                                                                 sec_id,
                                                                                 specimen_name)
+                total_pillars_found = num_negative + num_positive
 
                 print(f'Section{4 - sec_id}: Number_of_pillars: {pillar_count}, Occlusion_count: {num_positive}')
 
                 result[specimen_name][f'Section{4 - sec_id}'] = {'Number_of_pillars': pillar_count, 
                                                                     'Occlusion_count': num_positive,
                                                                     'Unindentified': 0,
-                                                                    'Non_occlusion':0 ,
-                                                                    'Plotted_path':plotted_image_path}
+                                                                    'Non_occlusion': int(num_negative),
+                                                                    'Plotted_path':plotted_image_path,
+                                                                    'Status': status}
                     
-            result[specimen_name]['Total_occlusion_count'] = 0
+            result[specimen_name]['Total_occlusion_count'] = total_pillars_found
             result[specimen_name]['Occlusion_index'] = 0
             result[specimen_name]['Date_time'] = now.strftime("%d/%m/%Y-%H:%M:%S")
 

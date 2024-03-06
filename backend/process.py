@@ -169,28 +169,28 @@ class PillarDetector:
 
             if sec_id == 0 and len(all_points) > 9850:
                 all_points = all_points[:9850]
-                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{4-sec_id}.jpg')
                 cv2.imwrite(plotted_image_path, npimg_plot)
                 return npimg, len(all_points), all_points,plotted_image_path
             
             elif sec_id == 1 and len(all_points) > 10900:
                 all_points = all_points[:10900]
-                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{4-sec_id}.jpg')
                 cv2.imwrite(plotted_image_path, npimg_plot)
                 return npimg, len(all_points), all_points,plotted_image_path
             
             elif sec_id == 2 and len(all_points) > 12300:
                 all_points = all_points[:12300]
-                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{4-sec_id}.jpg')
                 cv2.imwrite(plotted_image_path, npimg_plot)
                 return npimg, len(all_points), all_points ,plotted_image_path
             
             elif sec_id == 3 and len(all_points) > 14020:
                 all_points = all_points[:14020]
-                plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+                plotted_image_path = os.path.join(database_section_plotted_path,f'{4-sec_id}.jpg')
                 cv2.imwrite(plotted_image_path, npimg_plot)
                 return npimg, len(all_points), all_points ,plotted_image_path
             
-        plotted_image_path = os.path.join(database_section_plotted_path,f'{sec_id}.jpg')
+        plotted_image_path = os.path.join(database_section_plotted_path,f'{4-sec_id}.jpg')
         cv2.imwrite(plotted_image_path, npimg_plot)
         return npimg, len(all_points), all_points,plotted_image_path

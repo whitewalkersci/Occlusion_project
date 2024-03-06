@@ -172,10 +172,11 @@ class ImageProcessor:
                 crop = crop[400:-400,90:crop.shape[1]-90]
  
                 if crop.shape[1] > 5000:
-                    crop = crop[:,:4800]
+                    crop = crop[:,:4700]
                
  
                 curr_dir = os.getcwd()
+    
                 crop_path = os.path.join(curr_dir,database_specimen_path,f'{5-id}.png')
                
                 crops.append(crop_path)

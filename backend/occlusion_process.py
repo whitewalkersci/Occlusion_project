@@ -4,10 +4,11 @@ import numpy as np
 from tqdm import tqdm
 from backend.model_inference import ClassificationModel
 import time 
-
+from backend.inference import CNN 
 class OcclusionModel:
-    def __init__(self, model_path):
+    def __init__(self, model_path,model_filter_path):
         self.model = ClassificationModel(model_path,['cell','no_cell','UNKNOWN'])
+        self.model_filter = CNN(model_filter_path)
 
 
     def check_and_convert_to_bgr(self,image):
@@ -57,14 +58,24 @@ class OcclusionModel:
             classification_class = self.model.classify_roi(input_crop)
             # progress_bar.update(1)
             if classification_class == 'cell':
-                positive += 1
-                # os.makedirs(f'crop/{sp_name}/{section_name}/cell',exist_ok=True)
-                # cv2.imwrite(f'crop/{sp_name}/{section_name}/cell/{id}.jpg',input_crop)
-                directory = os.path.join(os.getcwd(),'database', sp_name,'occlusion_images',section_name, 'cell')
-                os.makedirs(directory, exist_ok=True)
-
-                file_path = os.path.join(directory, f'{time.time()}.jpg')
-                cv2.imwrite(file_path, input_crop)
+                
+                predicted_class, confidence = self.model_filter.predict_image(input_crop)
+                if predicted_class == 'cell':
+                    positive += 1
+                    # os.makedirs(f'crop/{sp_name}/{section_name}/cell',exist_ok=True)
+                    # cv2.imwrite(f'crop/{sp_name}/{section_name}/cell/{id}.jpg',input_crop)
+                    directory_true = os.path.join(os.getcwd(),'database', sp_name,'occlusion_images','section-'+str(4-section_name), 'cell')
+                    os.makedirs(directory_true, exist_ok=True)
+                    
+                    file_path = os.path.join(directory_true, f'{sp_name}-{section_name}-{confidence}-{positive}.jpg')
+                    cv2.imwrite(file_path, input_crop)
+                else:
+                    directory_false = os.path.join(os.getcwd(),'database', sp_name,'occlusion_images','section-'+str(4-section_name), 'false_cell')
+                    os.makedirs(directory_false, exist_ok=True)
+                    
+                    file_path = os.path.join(directory_false, f'{sp_name}-{section_name}-{confidence}-{time.time()}.jpg')
+                    cv2.imwrite(file_path, input_crop)
+                    
             
                 
             else:
