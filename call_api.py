@@ -1,11 +1,11 @@
 import requests
 
 url = 'http://127.0.0.1:5000/process_image'
-image_path = 'Specimen_001.tif'
+image_path = '/home/whitewalker/Desktop/Sciverse_2/Occlusion/assets/merged/Specimen029.tif'
 payload = {'image_path': image_path}
 response = requests.post(url, json=payload)
 print(response)
-# print(response.json())
+print(response.json())
 
 
 # input_data = {

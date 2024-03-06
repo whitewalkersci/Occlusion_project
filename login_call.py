@@ -4,7 +4,7 @@ import requests
 url = 'http://localhost:5000/login'
 
 # JSON payload with username and password
-payload = {'username': 'Dhruv', 'password': '123'}
+payload = {'username': 'admin', 'password': 'admin123'}
 
 # Send a POST request to the API
 response = requests.post(url, json=payload)
@@ -19,7 +19,7 @@ import requests
 create_user_url = 'http://localhost:5000/create_user'
 
 # JSON payload with username and password for the new user
-new_user_payload = {'username': 'Sham', 'password': '123'}
+new_user_payload = {'username': 'admin', 'password': 'admin123'}
 
 # Send a POST request to create a new user
 create_user_response = requests.post(create_user_url, json=new_user_payload)

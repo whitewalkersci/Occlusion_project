@@ -88,17 +88,19 @@ class CountProcessing(Resource):
                 image, pillar_count, all_points, plotted_image_path = process_pillar.detect_pillars(section_image, patch, sec_id,
                                                                                 specimen_name)
 
-                num_negative, num_positive = occlusion_model.occlusion_finder(all_points, section_image, sec_id,
-                                                                              specimen_name)
+                num_negative, num_positive = occlusion_model.occlusion_finder(all_points, 
+                                                                                section_image, 
+                                                                                sec_id,
+                                                                                specimen_name)
 
                 print(f'Section{4 - sec_id}: Number_of_pillars: {pillar_count}, Occlusion_count: {num_positive}')
 
                 result[specimen_name][f'Section{4 - sec_id}'] = {'Number_of_pillars': pillar_count, 
-                                                  'Occlusion_count': num_positive,
-                                                  'Unindentified': 0,
-                                                  'Non_occlusion':0 ,
-                                                  'Plotted_path':plotted_image_path}
-                
+                                                                    'Occlusion_count': num_positive,
+                                                                    'Unindentified': 0,
+                                                                    'Non_occlusion':0 ,
+                                                                    'Plotted_path':plotted_image_path}
+                    
             result[specimen_name]['Total_occlusion_count'] = 0
             result[specimen_name]['Occlusion_index'] = 0
             result[specimen_name]['Date_time'] = now.strftime("%d/%m/%Y-%H:%M:%S")
