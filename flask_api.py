@@ -8,7 +8,10 @@ import os
 from pathlib import Path
 import sqlite3
 import json 
-
+from datetime import datetime
+ 
+# datetime object containing current date and time
+now = datetime.now()
 
 app = Flask(__name__)
 api = Api(app)
@@ -49,7 +52,7 @@ class SectionProcessing(Resource):
                 return {'message': 'Invalid image path. Image filename should start with "Specimen_" and have a .tif extension'}, 400
 
             # Process the image
-            model_section_path = os.path.join('models', 'section.onnx')
+            model_section_path = os.path.join(os.getcwd(),'models', 'section.onnx')
             image_processor = ImageProcessor(model_section_path)
 
             specimen_name = image_filename.split('.')[0]  # Using the filename directly since we've already validated it
@@ -65,12 +68,12 @@ class SectionProcessing(Resource):
 
 class CountProcessing(Resource):
     def post(self):
-        try:
+        try:        
             data = request.get_json()
-            occlusion_model_path = os.path.join('models', 'occlusion.onnx')
-            pillar_filter_path = os.path.join('models', 'pillar_filter.onnx')
-            database_filename = os.path.join('database', 'final_databases.json')
-            
+            occlusion_model_path = os.path.join(os.getcwd(),'models', 'occlusion.onnx')
+            pillar_filter_path = os.path.join(os.getcwd(),'models', 'pillar_filter.onnx')
+            database_filename = os.path.join(os.getcwd(),'database', 'final_databases.json')
+
             result = {}
 
             if not os.path.exists(database_filename):
@@ -109,6 +112,7 @@ class CountProcessing(Resource):
                 
             result[specimen_name]['Total_occlusion_count'] = 0
             result[specimen_name]['Occlusion_index'] = 0
+            result[specimen_name]['Date_time'] = now.strftime("%d/%m/%Y-%H:%M:%S")
 
 
             with open(database_filename, 'r') as file:
@@ -131,21 +135,31 @@ class CountProcessing(Resource):
 class HistoryPage(Resource):
     def get(self):
         try:
-            database_json_path = os.path.join('database', 'final_database.json')
+            database_json_path = os.path.join(os.getcwd(),'database', 'final_databases.json')
             with open(database_json_path, 'r') as file:
-                data_from_file = json.load(file)
-
-                return data_from_file , 200
+                data_from_file = json.load(file)    
+                final_res = []
+                
+            for key, value in data_from_file.items():
+                print("Key:", key)
+                for specimen_key, specimen_value in value.items():
+                    final_res.append({'project_name':specimen_key,'Date_time':value[specimen_key]['Date_time'],'project_id':key,'Occlusion_folder_path':os.path.join(os.getcwd(),'database',specimen_key)})
+ 
+            return final_res , 200
         except Exception as e:
             return {'message': f'Error reading {str(e)}'}, 500
         
-# class Result(Resource):
-#     def post(self):
-#         try:
-#             project = request.get_json()
+class ViewResult(Resource):
+    def post(self):
+        try:
+            data = request.get_json()
+            project_key = data['project_key']
+            specimen_name = data['Specimen_name']
+            print(project_key)
 
-#             project_name = 
-
+            return {os.path.join(os.getcwd(),'database',specimen_name,'occlusion_images','cell')} , 200
+        except:
+            return {'message': f'Error reading {str(e)}'}, 500
 
 
 # Function to create a new database connection
@@ -166,6 +180,45 @@ def get_db():
         conn.close()
 
     return sqlite3.connect('database.db')
+
+
+
+class ResultShow(Resource):
+    def post(self):
+        try:
+            data = request.get_json()
+            project_key = data['project_key']
+            print(project_key)
+            
+            database_json_path = os.path.join(os.getcwd(),'database', 'final_databases.json')
+            with open(database_json_path, 'r') as file:
+                data_from_file = json.load(file)
+ 
+                
+            for key, value in data_from_file.items():
+                if str(key) == str(project_key):
+                    for specimen_key, specimen_value in value.items():
+                        final_res={'project_name':specimen_key,
+                                        'Date_time':value[specimen_key]['Date_time'],
+                                        'Total_occlusion_count':value[specimen_key]['Total_occlusion_count'],
+                                        'Occlusion_index':value[specimen_key]['Occlusion_index'],
+                                        'Section1':value[specimen_key]['Section1'],
+                                        'Section2':value[specimen_key]['Section2'],
+                                        'Section3':value[specimen_key]['Section3'],
+                                        'Section4':value[specimen_key]['Section4'],
+                                        'Section1_image': os.path.join(os.getcwd(),'database', specimen_key ,'sections_images','1.png'),
+                                        'Section2_image': os.path.join(os.getcwd(),'database',specimen_key ,'sections_images','2.png'),
+                                        'Section3_image': os.path.join(os.getcwd(),'database',specimen_key ,'sections_images','3.png'),
+                                        'Section4_image': os.path.join(os.getcwd(),'database',specimen_key ,'sections_images','4.png'),
+                                        }
+                        return final_res , 200
+ 
+            return 'No data in database' , 200
+        except Exception as e:
+            return {'message': f'Error reading {str(e)}'}, 500
+        
+
+
 
 class Login(Resource):
     def post(self):
@@ -230,7 +283,7 @@ api.add_resource(CreateUser, '/create_user')
 api.add_resource(SectionProcessing, '/process_image')
 api.add_resource(CountProcessing,'/process_analysis')
 api.add_resource(HistoryPage, '/history')
+api.add_resource(ResultShow, '/result')
 
 if __name__ == '__main__':
-    app.run(debug=True,port=5001)  # Set debug to False in production
-
+    app.run(debug=True,port=5000)  # Set debug to False in production

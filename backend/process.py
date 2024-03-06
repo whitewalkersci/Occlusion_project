@@ -6,7 +6,7 @@ import numpy as np
 from skimage.feature import match_template
 from skimage.feature import peak_local_max
 from backend.model_inference import ClassificationModel
-
+import time 
 
 class PillarDetector:
     def __init__(self, model_path, pillar_class=['positive_pillar','negative_pillar']):
@@ -44,17 +44,41 @@ class PillarDetector:
             gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             return gray_image
 
-    def process_cont(self, image_section, sec_id, sp_name):
-        file_name = os.path.join('patches_database', f'section_{sec_id+1}_{sp_name}.png')
+    # def process_cont(self, image_section, sec_id, sp_name):
+    #     file_name = os.path.join('patches_database', f'section_{sec_id+1}_{sp_name}.png')
         
-        # Check if the file exists
-        if os.path.exists(file_name):
-            # Read the image if the file exists
-            return cv2.imread(file_name, cv2.IMREAD_GRAYSCALE)
+    #     # Check if the file exists
+    #     if os.path.exists(file_name):
+    #         # Read the image if the file exists
+    #         return cv2.imread(file_name, cv2.IMREAD_GRAYSCALE)
+    #     else:
+    #         print('Handle the case where the file doesnt exist')
+    #         file_name = glob.glob('patches_database/*')
+    #         return cv2.imread(file_name[0], cv2.IMREAD_GRAYSCALE)
+        
+
+    def process_cont(self,image_section,sec_id,sp_name):
+        
+        file_name = os.path.join(os.getcwd(),'patches_database', f'section_{sec_id+1}_{sp_name}.png')
+        
+        if os.path.isfile(file_name):
+            return cv2.imread(file_name,cv2.IMREAD_GRAYSCALE)
         else:
-            print('Handle the case where the file doesnt exist')
-            file_name = glob.glob('patches_database/*')
-            return cv2.imread(file_name[0], cv2.IMREAD_GRAYSCALE)
+            images_file = sorted(glob.glob(os.path.join(os.getcwd(),'patches_database','*')))
+            for image_path in images_file:
+                patch = cv2.imread(image_path,cv2.IMREAD_GRAYSCALE)
+                patch_height,patch_width = patch.shape
+                
+                
+                sample_mt = match_template(image_section, patch)
+                pillars_found = peak_local_max(sample_mt, threshold_abs=0.85)
+                
+                if len(pillars_found)>0:
+                    print('Pillars found',image_path)
+                    for index,(y,x) in enumerate(pillars_found[:1]):
+                        patch = image_section[y:y+patch_height,x:x+patch_width]
+ 
+                    return patch
 
     def recursive_process(self, npimg, npimg_plot, patch, all_points, thresh, sp_name, sec_id, model_activation=False):
         # Your recursive_process function code here
@@ -96,9 +120,11 @@ class PillarDetector:
                     centroid_y = y + patch_height // 2
 
                     all_points.append((x,y,patch_width,patch_height))
-                
-                    # os.makedirs(f'all_crops/pillars/{sp_name}/{max_prob_class}', exist_ok=True)
-                    #cv2.imwrite(f'all_crops/pillars/{sp_name}/{max_prob_class}/{time.time()}.jpg', patch)
+                    # directory = os.path.join(os.getcwd(),'database', sp_name,'occlusion_images', 'cell')
+                    # os.makedirs(directory, exist_ok=True)
+
+                    # file_path = os.path.join(directory, f'{time.time()}.jpg')
+                    # cv2.imwrite(file_path, patch)
                     out_patch=patch
                 # else:
                 #     os.makedirs(f'all_crops/pillars/{sp_name}/{max_prob_class}', exist_ok=True)
@@ -123,7 +149,7 @@ class PillarDetector:
         npimg_plot = npimg.copy()
         all_points = []
 
-        database_section_plotted_path = os.path.join('database', f'{specimen_name}','section_plotted_images')
+        database_section_plotted_path = os.path.join(os.getcwd(),'database', f'{specimen_name}','section_plotted_images')
         os.makedirs(database_section_plotted_path,exist_ok=True)
 
         for st, thresh in enumerate([0.75, 0.78, 0.75, 0.75, 0.73, 0.70, 0.65, 0.68, 0.65, 0.63, 0.60, 50, 0.50, 0.48]):

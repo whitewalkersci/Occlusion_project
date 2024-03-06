@@ -3,6 +3,7 @@ import os
 import numpy as np
 from tqdm import tqdm
 from backend.model_inference import ClassificationModel
+import time 
 
 class OcclusionModel:
     def __init__(self, model_path):
@@ -59,6 +60,11 @@ class OcclusionModel:
                 positive += 1
                 # os.makedirs(f'crop/{sp_name}/{section_name}/cell',exist_ok=True)
                 # cv2.imwrite(f'crop/{sp_name}/{section_name}/cell/{id}.jpg',input_crop)
+                directory = os.path.join(os.getcwd(),'database', sp_name,'occlusion_images',section_name, 'cell')
+                os.makedirs(directory, exist_ok=True)
+
+                file_path = os.path.join(directory, f'{time.time()}.jpg')
+                cv2.imwrite(file_path, input_crop)
             
                 
             else:

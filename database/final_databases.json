@@ -1,41 +1,632 @@
 {
     "1": {
-        "1": "Na",
-        "2": "Na",
-        "3": "Na",
-        "4": "Na",
-        "5": "Na",
         "Specimen_001": {
-            "Section4": {
-                "Number_of_pillars": 9801,
-                "Occlusion_count": 2625,
+            "Section1": {
+                "Number_of_pillars": 555,
+                "Occlusion_count": 55,
                 "Unindentified": 0,
                 "Non_occlusion": 0,
-                "Plotted_path": "database/Specimen_001/section_plotted_images/0.jpg"
-            },
-            "Section3": {
-                "Number_of_pillars": 10575,
-                "Occlusion_count": 6200,
-                "Unindentified": 0,
-                "Non_occlusion": 0,
-                "Plotted_path": "database/Specimen_001/section_plotted_images/1.jpg"
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_001\\section_plotted_images\\0.jpg"
             },
             "Section2": {
-                "Number_of_pillars": 9372,
-                "Occlusion_count": 8581,
+                "Number_of_pillars": 555,
+                "Occlusion_count": 55,
                 "Unindentified": 0,
                 "Non_occlusion": 0,
-                "Plotted_path": "database/Specimen_001/section_plotted_images/2.jpg"
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_001\\section_plotted_images\\1.jpg"
             },
-            "Section1": {
-                "Number_of_pillars": 13860,
-                "Occlusion_count": 12797,
+            "Section3": {
+                "Number_of_pillars": 555,
+                "Occlusion_count": 55,
                 "Unindentified": 0,
                 "Non_occlusion": 0,
-                "Plotted_path": "database/Specimen_001/section_plotted_images/3.jpg"
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_001\\section_plotted_images\\2.jpg"
+            },
+            "Section4": {
+                "Number_of_pillars": 555,
+                "Occlusion_count": 55,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_001\\section_plotted_images\\3.jpg"
             },
             "Total_occlusion_count": 0,
-            "Occlusion_index": 0
+            "Occlusion_index": 0,
+            "Date_time": "23/02/2024"
+        }
+    },
+    "2": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "23/02/2024"
+        }
+    },
+    "3": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "23/02/2024"
+        }
+    },
+    "4": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "23/02/2024"
+        }
+    },
+    "5": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "23/02/2024"
+        }
+    },
+    "6": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "23/02/2024"
+        }
+    },
+    "7": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "25/02/2024"
+        }
+    },
+    "8": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "25/02/2024"
+        }
+    },
+    "9": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "25/02/2024"
+        }
+    },
+    "10": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024"
+        }
+    },
+    "11": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024"
+        }
+    },
+    "12": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024"
+        }
+    },
+    "13": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024"
+        }
+    },
+    "14": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024"
+        }
+    },
+    "15": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 32,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 111,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 585,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3469,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024"
+        }
+    },
+    "16": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024-15:48:03"
+        }
+    },
+    "17": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024-15:48:03"
+        }
+    },
+    "18": {
+        "Specimen_017": {
+            "Section4": {
+                "Number_of_pillars": 9815,
+                "Occlusion_count": 64,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\0.jpg"
+            },
+            "Section3": {
+                "Number_of_pillars": 10900,
+                "Occlusion_count": 183,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\1.jpg"
+            },
+            "Section2": {
+                "Number_of_pillars": 12251,
+                "Occlusion_count": 701,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\2.jpg"
+            },
+            "Section1": {
+                "Number_of_pillars": 14001,
+                "Occlusion_count": 3546,
+                "Unindentified": 0,
+                "Non_occlusion": 0,
+                "Plotted_path": "C:\\Users\\PrashantMore\\Desktop\\API_builder\\Occlusion_project\\database\\Specimen_017\\section_plotted_images\\3.jpg"
+            },
+            "Total_occlusion_count": 0,
+            "Occlusion_index": 0,
+            "Date_time": "26/02/2024-15:48:03"
         }
     }
 }
